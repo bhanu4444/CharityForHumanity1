@@ -1,0 +1,87 @@
+<% include ../partials/header %>
+
+<div id="margin-footer">
+    <script>
+        // init controller
+        var controller = new ScrollMagic.Controller();
+    </script>
+
+
+    <header class="jumbotron images fadeInDown animated">
+        <div class="container">
+            <div class="display-text">
+                <h1><strong>Welcome To Charity for Humanity!</strong></h1>
+                <h1><strong>Bring a change by helping the needy ones</strong></h1>
+            </div>
+            <div class="hiddentext">        
+                <h1><strong>Welcome To Charity for Humanity!</strong></h1>
+                <h1><strong>Lend a helping hand</strong></h1>
+                <p><a class="btn btn-outline-warning btn-lg" href=#>Donate</a></p>
+            </div>
+        </div>
+    </header>
+    <p></p>
+    <p></p>
+
+    
+
+    <div class="container">
+        <% if(currentUser && currentUser.isAdmin){ %>
+            <p><a href="/charities/new" class="btn btn-outline-primary btn-lg">Add new</a></p>
+        <% } %>
+    
+        <div class="row">
+            <% charities.forEach(function(charity){ %>
+            <div class="animate1 col-sm-12 col-md-6 animated">
+                <div class="card">
+                    <img class="card-img-top img-thumbnail" src="<%= charity.image %>" alt="Card image cap">
+                    <div class="card-body ">
+                        <h4 class="card-text "><%= charity.name %></h4>
+                        <div class="description">
+                            <p><%- charity.description.toString().substring(0,200)%>...</p>
+                        </div>
+                        <p>
+                            <a href="/charities/<%= charity._id %>" class="btn btn-outline-info">More Info</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+            <script>
+                // build scene
+                new ScrollMagic.Scene({
+                    triggerElement: ".animate1",
+                    triggerHook: "onEnter", // show, when scrolled 10% into view
+                    duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+                    offset: 50 // move trigger to center of element
+                })
+                .setClassToggle(".animate1", "fadeInLeft") // add class to reveal
+                .reverse(false)
+                .addTo(controller);
+            </script>
+            <% }); %>
+        </div>
+
+        <br>
+        <div class="wrapper animate2 animated">
+            <img src="../images/larm-rmah-AEaTUnvneik-unsplash.jpg" alt="image" class="img-fluid img-stories">
+            <div class="overlay">
+                <p class="overlay-text">Learn how we're working to tackle the issue of sustainability</p>
+                <a class="btn btn-primary btn-lg" href="/stories">Field stories</a>
+            </div>
+        </div>
+        <script>
+            // build scene
+            new ScrollMagic.Scene({
+                triggerElement: ".animate2",
+                triggerHook: "onEnter", // show, when scrolled 10% into view
+                duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+                offset: 50 // move trigger to center of element
+            })
+            .setClassToggle(".animate2", "fadeInRight") // add class to reveal
+            .reverse(false)
+            .addTo(controller);
+        </script>
+    </div>
+</div>
+<% include ../partials/footer %>

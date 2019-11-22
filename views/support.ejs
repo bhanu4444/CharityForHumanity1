@@ -1,0 +1,60 @@
+<% include ./partials/header %>
+<div class="bodypage">
+    <div class="row" style="margin-top: 0;">
+        <div class="col-sm-12" style="padding: 0;">
+        <div class="jumbotron animated fadeInDown" id="supportpage">
+                <h1 class="display-4 font-weight-normal text-dark"> JOIN THE QUEST</h1>
+                <p class="lead font-weight-light text-dark">There are many ways to make a difference and every contribution helps!</p>
+              </div></div>
+              <div class="col-xs-6 col-md-12">
+                <div style="width: 100%">
+            <div style="float: left; width: 50%" id="para">
+                    <div class="p-2 mb-1 bg-transparent text-dark col-sm-12 animated fadeInLeft">
+                <h3>REGISTER ONLINE TO MAKE AN IMPACT </h3>
+            <P>Education, access to clean drinking water, sanitation are some of the means as well as the end to a better life: the means because they empower an individual to earn his/her livelihood and the end because it increases one's awareness on a range of issues – from healthcare to appropriate social behaviour to understanding one's rights – and in the process help him/her evolve as a better citizen.</p>
+            <p>Doubtless, these are the most powerful catalysts for social transformation. But these can't be achieved in isolation. A child will go to school only if the family, particularly the mother, is assured of healthcare and empowerment. So join us by signing up and embark on a remarkable journey with us!!</P>
+        <button type="button" id="ThisButton" class="btn btn-dark btn-lg btn12">SIGN UP</button>
+        </div></div>
+        <script type="text/javascript">
+            document.getElementById("ThisButton").onclick = function () {
+                location.href = "http://localhost:3000/register";
+            };
+        </script>
+    </div>
+    <div class="col-xs-6 col-md-12">
+            <div style="float: right; width: 50%" id="parase">
+                    <div class="p-2 mb-1 bg-transparent text-dark col-sm-12 animated fadeInRight">
+                <h3>DONATE NOW</h3>
+            <P>We would love to work with you. Your donation will further our vision of ensuring a happy and healthy childhood for India’s children. Donate to make a change and become part of our family. Lets spread smiles across faces and make the world a better place each moment!!</P>
+            <button type="button" class="btn btn-dark btn-lg btn12" id="donatebtn">DONATE</button>
+        </div></div>
+    </div>
+        </div>
+        <div class="col-sm-12">
+        <div style="clear: both"></div>
+        <div class="container" id="SocialMSprt"><h3>SUPPORT US ON SOCIAL MEDIA</h3>
+         <div class="container" id="Smlogo"><i class="fab fa-instagram fa-3x" style="margin-right: 10px" id="Instagram" ></i>
+            <script type="text/javascript">
+                document.getElementById("Instagram").onclick = function () {
+                    location.href = "http://www.instagram.com";
+                };
+            </script>
+            <i class="fab fa-facebook-square fa-3x" style="margin-right: 10px" id="Facebook"></i>
+            <script type="text/javascript">
+                document.getElementById("Facebook").onclick = function () {
+                    location.href = "http://www.facebook.com";
+                };
+            </script>
+            <i class="fab fa-twitter-square fa-3x" id="Twitter"></i>
+            <script type="text/javascript">
+                document.getElementById("Twitter").onclick = function () {
+                    location.href = "http://www.twitter.com";
+                };
+            </script>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+<% include ./partials/footer %> 

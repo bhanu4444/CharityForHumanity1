@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<div class="row">
+    <div style="width: 30%; margin: 25px auto;">
+        <h1 style="text-align: center; color: #000;">Add a new Story </h1>
+        <form method="POST" action="/stories">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" placeholder="" name="story[title]" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Image URL</label>
+                <input type="text" placeholder="" name="story[image]" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Content</label>
+                <textarea name="story[content]" class="form-control" type="text" rows="8" required>
+                </textarea>
+            </div>
+            <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+            </div>
+        </form>
+        <a href="/stories" class="btn btn-secondary" style="margin-bottom: 15px;">Go Back</a>
+    </div>
+</div>
+
+<% include ../partials/footer %>

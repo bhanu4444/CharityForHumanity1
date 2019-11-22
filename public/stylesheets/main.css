@@ -1,0 +1,377 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  background-color: #f5f5f5;
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+#margin-footer
+{
+  margin-bottom: 90px;
+}
+.container .text-white {
+  margin: 20px 2px;
+}
+.jumbotron {
+  height: 40rem;
+  background-image: url("../images/alexei-scutari-5Zg64OwXJg8-unsplash.jpg"); 
+  background-size: cover;
+  border-radius: 0px;
+}
+h1 {
+  color:white;
+}
+/* Thumbnail styles */
+.thumbnail img {
+    width: 100%;
+    max-height: 650px;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+
+
+/* Campground show page delete button */
+.delete-form {
+	display: inline-block;
+}
+
+/* Flexbox grid fix */
+.flex-wrap {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+
+.nav-link, .button {
+ 
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
+}
+
+.card {
+  margin-bottom: 1rem;
+  border-radius: 0 0 5% 5%;
+}
+
+@media screen and (min-width: 721px) {
+    /* Write your CSS properties here */
+    #carouselExampleControls{
+      margin-left: 30%;
+      
+  }
+}
+@media screen and (max-width: 720px) {
+    /* Write your CSS properties here */
+    #carouselExampleControls{
+      margin-left: 0;
+      
+  }
+}
+
+#carouselExampleControls{
+  margin: 0 auto;
+  width: 60%;
+  height: 500px !important;
+}
+.carousel-inner img{
+  margin: 0 auto;
+  height: 500px !important;
+  width: 100%;
+}
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: block;
+}
+
+/* Donate button overlay */
+.flex1
+{
+	position: relative;
+	overflow: hidden;
+}
+.flex1:hover::before
+{
+	top: 0;
+  right: 0;
+}
+.flex1::before
+{
+	content: "";
+	position: absolute;
+	background: orangered;
+	top: 0;
+	right: -100%;
+	transition: 0.5s ease-in-out;
+	height: 100%;
+	width: 100%;
+	opacity: .3;
+}
+
+/* overlay text on charity page */
+.images
+{
+	position: relative;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.images::before
+{
+	position: absolute;
+	content: "";
+	top: 0%;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	transition: 0.2s linear;
+  opacity: 0.75;
+	background: #808080;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3fada8, #808080);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3fada8, #808080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.images:hover::before
+{
+	top: 0%;
+	left: 0%;
+}
+.display-text h1
+{
+    text-align: center;
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.images:hover .display-text
+{
+    display: none;
+}
+.hiddentext
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	display: none;
+}
+.hiddentext h1
+{
+    background-image: linear-gradient(to right, rgb(245, 46, 46), orange 50%, brown);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.images:hover .hiddentext
+{
+	display: inline-block;
+}
+.img-stories
+{
+    height: 550px;
+    width: 100%;
+}
+.wrapper
+{
+    position: relative;
+}
+.overlay
+{
+    position: absolute;
+    text-align: center;
+    top: 15%;
+	  left: 50%;
+    transform: translate(-50%,-50%);
+}
+.overlay-text
+{
+    font-size: 2.3rem;
+    font-weight: bolder;
+    background: linear-gradient(to right, red, blue);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*Support and About us*/
+#supportpage { 
+  padding-top: 0px;
+  line-height: 0.4rem;
+  height: 150px;
+  background: url("/images/kat-yukawa-K0E6E0a0R3A-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 40px;
+  color: black;
+  font-weight: bolder;
+}
+#para {
+box-shadow: 7px 7px 6px grey;
+padding-left: 30px;
+text-align: left;
+}
+.bodypage {
+background-image: url("/images/roman-kraft-0EVKn3-5JSU-unsplash.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+overflow: hidden;
+}
+#parase {
+box-shadow: 7px 7px 6px grey;
+padding-left: 20px;
+text-align: left
+}
+.btn12 {
+  margin-bottom: 10px;
+  padding: 6px 30px;
+  margin-left: 200px;
+}
+#SocialMSprt{
+  margin-top: 125px;
+  margin-left: 460px;
+}
+#Smlogo {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  margin-left:110px;
+}
+#Smlogo i {
+  cursor: pointer;
+}
+.bodypage2 {
+  background-image: url("/images/hannes-egler-a9zeXX25lC8-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+#aboutpage {
+  padding-top: 0px;
+  line-height: 0.4rem;
+  height: 132px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: auto;
+  margin-bottom: 40px;
+  font-weight: bolder;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); 
+  color:  #c7bdbd;
+}
+#card1r {
+  margin-top: 40px;
+  margin-left: 124px;
+  margin-bottom: 50px;
+  background: rgb(0, 0, 0); 
+  background: rgba(0, 0, 0, 0.5); 
+  color:  #c7bdbd;
+}
+#card2w {
+  margin-top: 40px;
+  margin-right: 124px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); 
+  color: #c7bdbd;
+}
+#ndfc {
+  background-repeat: no-repeat;
+  background-position: auto;
+  color:  #c7bdbd;
+}
+.needfc {
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); 
+  color: #c7bdbd;
+  margin-top: 25px;
+  margin-bottom: 70px;
+  margin-left:125px;
+  margin-right: 125px;
+  padding-top: 10px;
+}
+.Textit {
+  padding-left: 10px;
+}
+.path {
+  padding-left: 20px;
+  margin: 36px;
+  padding-top: 20px;
+  margin-top: 10px;
+  line-height: 1.4rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: auto;
+  margin-bottom: 40px;
+  font-weight: normal;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); 
+  color: #c7bdbd;
+  padding-bottom:20px;
+}
+.circular--square {
+  position: center;
+  margin: 10px;
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+}
+/*Support and About ends*/
+
+/* Contact form */ 
+.contact
+{
+  background-image: url("../images/contact-us-background-businesses-email-call-message-landing-page-cover-icon-131608659.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Stories css */
+.header
+{
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    margin: 20px 0px;
+    font-weight: bold;
+    text-align: center;
+}
+.header-text
+{
+    font-size: 1.2rem;
+    text-align: center;
+}
+.img-size
+{  
+    width: 220px;
+    height: 190px;
+}
+#card-grid
+{
+  margin: 0px;
+  border-radius: 0px;
+}
+.row
+{
+  margin: 35px 0px;
+}

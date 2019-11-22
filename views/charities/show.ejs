@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+<div class="row" id="margin-footer">
+    <div class="col-md-9 container">
+        <div class="thumbnail">
+            <img  class="img-responsive img-thumbnail rounded" src="<%= charity.image %>">
+            <div class="caption-full">
+                <h2><a><%=charity.name%></a></h2>
+                <hr>
+                <p><%-charity.description %></p>
+                <p> <a class="btn btn-outline-danger " href=#>Donate Now</a>
+                </p>
+                <% if(currentUser && currentUser.isAdmin){ %>
+                    <a class="btn btn-warning" href="/charities/<%=charity._id%>/edit">Edit</a>
+                    <form action="/charities/<%=charity._id %>?_method=DELETE" method="POST" class="delete-form">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                <%} %>
+                
+            </div>
+        </div>        
+    </div>
+</div>
+<% include ../partials/footer %>

@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+<div class="row" id="margin-footer">
+    <div class="col-md-9 container">
+        <div class="thumbnail">
+            <img  class="img-responsive img-thumbnail rounded" src="<%= story.image %>">
+            <div class="caption-full">
+                <h2><a><%= story.title %></a></h2>
+                <hr>
+                <p><%-story.content %></p>
+                <p> <a class="btn btn-outline-danger " href=#>Donate Now</a>
+                </p>
+                <% if(currentUser && currentUser.isAdmin){ %>
+                    <a class="btn btn-warning" href="/stories/<%=story._id%>/edit">Edit</a>
+                    <form action="/stories/<%=story._id %>?_method=DELETE" method="POST" class="delete-form">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                <%} %>       
+            </div>
+        </div>        
+    </div>
+</div>
+<% include ../partials/footer %>

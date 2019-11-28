@@ -6,6 +6,8 @@ var crypto = require("crypto");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var bodyParser = require("body-parser");
+var middleware = require("../middleware");
+var { isLoggedIn, isAdmin } = middleware; 
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
@@ -17,9 +19,96 @@ router.get("/", function (req, res) {
     
 });
 
+//User routes
+router.get("/user", isLoggedIn, function (req, res) {
+    res.render("user", { page: 'user' });
+});
+router.post("/user", isLoggedIn, function (req, res) {
+    console.log(req.user._id);
+    User.findOne(req.user._id, function(err, foundUser){
+        if(err)
+        {
+            req.flash("error", err.message);
+        }
+        else
+        {
+            console.log(foundUser);
+            foundUser.username = req.body.username;
+            foundUser.firstName = req.body.firstName;
+            foundUser.lastName = req.body.lastName;
+            foundUser.email = req.body.email;
+            foundUser.save(function(err){
+                if(err)
+                {
+                    req.flash("error", err.message);
+                }
+                else
+                {
+                    req.flash("success", "User Successfully Updated!");
+                    req.logIn(foundUser,function(err){
+                        if(err)
+                        {
+                            req.flash("error", err.message);
+                            res.redirect("/");
+                        }
+                        else
+                        {
+                            res.redirect("/charities");
+                        }
+                    });
+                }
+            });   
+        }
+    });
+});
+router.get("/resetPassword", isLoggedIn, function (req, res) {
+    res.render("resetPassword", { page: 'resetPassword' });
+});
+router.post("/resetPassword", isLoggedIn, passport.authenticate("local",
+    { 
+        successRedirect: "",
+        failureRedirect: "/resetPassword",
+        failureFlash: "Password is incorrect",
+        successFlash: ''
+    }), function (req, res) {
+        if(req.body.newPassword = req.body.confirmNewPassword)
+        {
+            User.findOne(req.user._id, function(err, foundUser){
+                foundUser.setPassword(req.body.newPassword, function(err){
+                    foundUser.save(function(err){
+                        if(err)
+                        {
+                            req.flash("error", err.message);
+                        }
+                        else
+                        {
+                            req.flash("success","Password Updated Successfully!");
+                            req.logIn(foundUser,function(err){
+                                if(err)
+                                {
+                                    req.flash("error", err.message);
+                                    res.redirect("/");
+                                }
+                                else
+                                {
+                                    res.redirect("/charities");
+                                }
+                            });
+                        }
+                    });
+                });
+            });            
+        }
+    }
+);
+
+
 //Route to show register form
 router.get("/register", function (req, res) {
     res.render("register", { page: 'register' });
+});
+router.get("/admin_register", isAdmin, function (req, res) {
+    res.render("admin_register", { page: 'admin_register' });
 });
 
 //Route to handle signup logic
@@ -28,7 +117,7 @@ router.post("/register", function (req, res) {
     if(req.body.adminCode === 'admin123'){
         newUser.isAdmin = true;
     }
-    if (newUser.firstName === '' || newUser.lastName === '' || newUser.email === '' || newUser.firstName === ''){
+    if (newUser.firstName === '' || newUser.lastName === '' || newUser.email === ''){
         return res.render("register", { error:"Please enter all the details" });
     }
     User.register(newUser, req.body.password, function (err, user) {
@@ -85,7 +174,7 @@ router.post('/forgot', function(req, res, next){
         },
         function(token, done){
             User.findOne({email: req.body.email}, function(err, user){
-                if(!User){
+                if(!user){
                     req.flash('error', 'No account with that email address exists.');
                     return res.redirect('/forgot');
                 }
@@ -225,7 +314,6 @@ router.post("/contact", (req, res, next) => {
 });
 
 router.get("/contact", function (req, res) {
-    console.log("hello");
     res.render("contact", { page: 'contact' });
 });
 

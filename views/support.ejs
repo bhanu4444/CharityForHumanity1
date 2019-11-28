@@ -26,8 +26,13 @@
                     <div class="p-2 mb-1 bg-transparent text-dark col-sm-12 animated fadeInRight">
                 <h3>DONATE NOW</h3>
             <P>We would love to work with you. Your donation will further our vision of ensuring a happy and healthy childhood for India’s children. Donate to make a change and become part of our family. Lets spread smiles across faces and make the world a better place each moment!!</P>
-            <button type="button" class="btn btn-dark btn-lg btn12" id="donatebtn">DONATE</button>
+            </a><button type="button" class="btn btn-dark btn-lg btn12" id="donatebtn">DONATE</button>
         </div></div>
+        <script type="text/javascript">
+            document.getElementById("donatebtn").onclick = function () {
+                location.href = "http://localhost:3000/donate";
+            };
+        </script>
     </div>
         </div>
         <div class="col-sm-12">

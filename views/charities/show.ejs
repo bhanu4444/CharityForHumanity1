@@ -7,7 +7,7 @@
                 <h2><a><%=charity.name%></a></h2>
                 <hr>
                 <p><%-charity.description %></p>
-                <p> <a class="btn btn-outline-danger " href=#>Donate Now</a>
+                <p> <a class="btn btn-outline-danger " href="/donate">Donate Now</a>
                 </p>
                 <% if(currentUser && currentUser.isAdmin){ %>
                     <a class="btn btn-warning" href="/charities/<%=charity._id%>/edit">Edit</a>

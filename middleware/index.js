@@ -13,7 +13,7 @@ module.exports = {
             next();
         } else {
             req.flash('error', 'You must be signed in as admin to do that!');
-           return res.redirect('back');
+            return res.redirect('back');
         }
     }
 }

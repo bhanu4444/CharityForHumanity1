@@ -16,7 +16,7 @@
             <div class="hiddentext">        
                 <h1><strong>Welcome To Charity for Humanity!</strong></h1>
                 <h1><strong>Lend a helping hand</strong></h1>
-                <p><a class="btn btn-outline-warning btn-lg" href=#>Donate</a></p>
+                <p><a class="btn btn-outline-warning btn-lg" href="/donate">Donate</a></p>
             </div>
         </div>
     </header>
@@ -34,7 +34,9 @@
             <% charities.forEach(function(charity){ %>
             <div class="animate1 col-sm-12 col-md-6 animated">
                 <div class="card">
-                    <img class="card-img-top img-thumbnail" src="<%= charity.image %>" alt="Card image cap">
+                    <div class="inner">
+                            <img class="card-img-top img-thumbnail" src="<%= charity.image %>" alt="Card image cap">
+                    </div>
                     <div class="card-body ">
                         <h4 class="card-text "><%= charity.name %></h4>
                         <div class="description">
@@ -64,7 +66,10 @@
 
         <br>
         <div class="wrapper animate2 animated">
-            <img src="../images/larm-rmah-AEaTUnvneik-unsplash.jpg" alt="image" class="img-fluid img-stories">
+            <div class="inner">
+                <img src="../images/larm-rmah-AEaTUnvneik-unsplash.jpg" alt="image" class="img-fluid img-stories">
+            </div>
+            
             <div class="overlay">
                 <p class="overlay-text">Learn how we're working to tackle the issue of sustainability</p>
                 <a class="btn btn-primary btn-lg" href="/stories">Field stories</a>

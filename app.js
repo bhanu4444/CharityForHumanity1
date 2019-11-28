@@ -13,11 +13,23 @@ var express = require("express"),
     User    = require("./models/user"),
     logger = require("morgan"),
     methodOverride = require("method-override");
+    request = require('request');
+    
+const pug = require('pug');
+
+const _ = require('lodash');
+
+const path = require('path');
+
+const {Donor} = require('./models/donor');
+
+const {initializePayment, verifyPayment} = require('./config/paystack')(request);
 
 //requiring routes
 var charityRoutes = require("./routes/charities"),
     indexRoutes = require("./routes/index"),
     storyRoutes = require("./routes/stories");
+    donateRoutes = require("./routes/donate");
 
 // mongoose.Promise = global.Promise;
 
@@ -27,7 +39,7 @@ var charityRoutes = require("./routes/charities"),
 //     .then(() => console.log(`Database connected`))
 //     .catch(err => console.log(`Database connection error: ${err.message}`));
 
-mongoose.connect("mongodb://localhost/charity_for_humanity", {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false });
+mongoose.connect("mongodb://localhost/charity", {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false });
 
 
 //Sets views folder for views
@@ -64,6 +76,7 @@ app.use(function (req, res, next) {
 app.use("/", indexRoutes);
 app.use("/charities", charityRoutes);
 app.use("/stories", storyRoutes);
+app.use("/donate", donateRoutes);
 
 
 //Server started here

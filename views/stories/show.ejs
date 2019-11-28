@@ -7,7 +7,7 @@
                 <h2><a><%= story.title %></a></h2>
                 <hr>
                 <p><%-story.content %></p>
-                <p> <a class="btn btn-outline-danger " href=#>Donate Now</a>
+                <p> <a class="btn btn-outline-danger " href="/donate">Donate Now</a>
                 </p>
                 <% if(currentUser && currentUser.isAdmin){ %>
                     <a class="btn btn-warning" href="/stories/<%=story._id%>/edit">Edit</a>

@@ -1,0 +1,33 @@
+<% include ./partials/header %>
+<div class="row">
+    
+    <div style="width: 30%; margin: 25px auto;">
+        <h2 style="text-align: center">Edit User</h2>
+        <form action="/user" method="post">
+            <div class="form-group">
+                <label>Username</label>
+                <input class="form-control" type="text" name="username" value="<%= currentUser.username %>" required>
+            </div>
+            <div class="form-group">
+                <label>First Name</label>
+                <input class="form-control" type="text" name="firstName" value="<%= currentUser.firstName %>" required>
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input class="form-control" type="text" name="lastName" value="<%= currentUser.lastName %>" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input class="form-control" type="email" name="email" value="<%= currentUser.email %>" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Submit</button>
+            </div>
+        </form>
+        <div style="text-align: center;">
+            <a href="/resetPassword">Reset Password</a>
+        </div>
+        <a href="/charities" class="btn btn-secondary" style="margin-bottom: 15px;">Go Back</a>
+    </div>
+</div>
+<% include ./partials/footer %>

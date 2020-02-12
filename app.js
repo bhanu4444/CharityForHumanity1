@@ -39,7 +39,9 @@ var charityRoutes = require("./routes/charities"),
 //     .then(() => console.log(`Database connected`))
 //     .catch(err => console.log(`Database connection error: ${err.message}`));
 
-mongoose.connect("mongodb://localhost/charity", {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false });
+mongoose.connect("mongodb+srv://admin:PasswordAtlas@cluster0-4au8m.mongodb.net/charity", {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false })
+    .then(() => console.log(`Database connected`))
+     .catch(err => console.log(`Database connection error: ${err.message}`));
 
 
 //Sets views folder for views
@@ -83,5 +85,3 @@ app.use("/donate", donateRoutes);
 app.listen(3000, function(request, response){
     console.log("Server started");
 });
-
-//"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"

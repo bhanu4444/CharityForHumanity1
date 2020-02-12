@@ -107,7 +107,7 @@ router.post("/resetPassword", isLoggedIn, passport.authenticate("local",
 router.get("/register", function (req, res) {
     res.render("register", { page: 'register' });
 });
-router.get("/admin_register", isAdmin, function (req, res) {
+router.get("/admin_register",isAdmin , function (req, res) {
     res.render("admin_register", { page: 'admin_register' });
 });
 

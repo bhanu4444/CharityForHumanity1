@@ -82,6 +82,10 @@ app.use("/donate", donateRoutes);
 
 
 //Server started here
-app.listen(3000, function(request, response){
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 3000;
+}
+app.listen(port, function(request, response){
     console.log("Server started");
 });

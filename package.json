@@ -23,7 +23,7 @@
     "express-session": "^1.17.0",
     "locus": "^2.0.4",
     "method-override": "^3.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongoose": "^5.7.12",
     "morgan": "^1.9.1",
     "nodemailer": "^6.3.1",
